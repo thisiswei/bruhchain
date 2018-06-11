@@ -123,7 +123,7 @@ bruhchain = BruhChain()
 
 @app.route('/mine', methods=['GET'])
 def mine():
-    last_bruh = bruhchain.last_block
+    last_bruh = bruhchain.last_bruh
     proof = bruhchain.proof_of_work(last_bruh)
     bruhchain.new_trainsaction(
         sender='0',
