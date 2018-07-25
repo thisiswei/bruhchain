@@ -51,8 +51,9 @@ class BruhChain(object):
         string = '{last_proof}{proof}{last_hash}'.format(
             last_proof=last_proof,
             proof=proof,
+            last_hash=last_hash,
         )
-        return hashlib.sha256(guess).hexdigest()[:4] == '0000'
+        return hashlib.sha256(string).hexdigest()[:4] == '0000'
 
 
     def resolve_conflicts(self):
